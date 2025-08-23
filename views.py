@@ -1,6 +1,17 @@
 from django.shortcuts import render , get_object_or_404
-from django.http import httpResponSeserverError
+from django.http import HttpResponSeserverError
+from .models import reservations
 
+
+def reservation_detail(request , reservation_id):
+    try:
+        reservation = Reservation.object.get(id=reservation_id)
+        return render(request, 'reservation.html', {'reservation':reservation})
+    
+    except Reservation.DoesNotExist:
+        return render(request, '404.html',status=404)
+    except Exception as e:
+        return HttpResponseServerError("an expected error occured please try again later")    
 
 
 def main_points(request):
