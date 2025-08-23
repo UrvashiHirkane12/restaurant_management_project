@@ -38,6 +38,13 @@ main p{
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
+.logo {
+
+    flex: 1;
+    padding:40px 20px ;
+    text-align: center;
+}
 footer {
     text-align: center;
     background-color: bisque;
