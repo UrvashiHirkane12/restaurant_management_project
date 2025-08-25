@@ -1,7 +1,7 @@
 from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponSeserverError
 from .models import reservations
-
+import datetime
 
 def reservation_detail(request , reservation_id):
     try:
@@ -27,3 +27,7 @@ def home(request):
         "restaurant_00": settings.RESTAURANT_PHONE,
     }    
     return render(request, "home.html", context)
+
+
+def current_year(request):
+    return {'current_year': datetime.datetime.now().year} 
