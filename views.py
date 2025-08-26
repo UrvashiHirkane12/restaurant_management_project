@@ -2,6 +2,7 @@ from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponSeserverError
 from .models import reservations
 import datetime
+from .forms import contactForm
 
 def reservation_detail(request , reservation_id):
     try:
@@ -30,4 +31,15 @@ def home(request):
 
 
 def current_year(request):
-    return {'current_year': datetime.datetime.now().year} 
+    return {'current_year': datetime.datetime.now().year}
+    
+def home(request):
+    if request.method == "POST":
+        form = contactForm(request.POST)
+
+        if form.is_valid():
+        form.save()
+        return redirect('home')
+    else:
+        form= contactForm()
+    return render(request, 'home.html', {'form': form})    
