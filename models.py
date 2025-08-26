@@ -42,3 +42,12 @@ class order(models.Model):
 
     def __str__(self):
         return f"Order  #{self.id} by {self.customer.username}"       
+
+
+class contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.emailField()
+    submitted_at = models.dateTimeField(auto_now_add=True)
+
+    def__str__(self):
+        return self.name
