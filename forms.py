@@ -1,5 +1,6 @@
 from django import forms
 from .models import Feedback
+from .models import contact
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
@@ -9,3 +10,7 @@ class FeedbackForm(forms.ModelForm):
             'placeholder': 'enter your feedback here...'
             }),
         }
+
+class contactForm(forms.ModelForm):
+    class Meta:
+        model = contactfields = ['name', 'email']        
