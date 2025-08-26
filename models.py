@@ -25,3 +25,20 @@ class customeruser(abstractuser):
     email=  models.emailfield(unique=True)
     def __str__(self):
         return self.username
+
+class menu(models.Model):
+    name = models.CharField(max_lentg=100)
+    price=  models.DecimalField(max_digits=8)
+
+    def__str__(self):
+        return self.name
+
+class order(models.Model):
+    STATUS_CHOICES =[
+        ("PENDING", "pending"),
+        ("CONFIRMED","confirmed"),
+        ("DELIVERED" , "delivered"),
+    ] 
+
+    def __str__(self):
+        return f"Order  #{self.id} by {self.customer.username}"       
