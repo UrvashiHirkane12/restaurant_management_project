@@ -51,3 +51,11 @@ class contact(models.Model):
 
     def__str__(self):
         return self.name
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)  
+    description = models.TextField(blank=True)
+    category = models.CharField(max_length=50)
+
+    def__str__(self):
+        return self.name      
