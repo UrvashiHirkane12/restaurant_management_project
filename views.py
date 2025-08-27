@@ -1,6 +1,6 @@
 from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponSeserverError
-from .models import reservations
+from .models import reservations, MenuItem
 import datetime
 from .forms import contactForm
 
@@ -43,3 +43,7 @@ def home(request):
     else:
         form= contactForm()
     return render(request, 'home.html', {'form': form})    
+
+def menu_view(request):
+    items = MenuItem.objects.all()
+    return render(request, "menu.html", {"items":items})    
