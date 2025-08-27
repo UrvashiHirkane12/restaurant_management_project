@@ -3,6 +3,7 @@ from django.http import HttpResponSeserverError
 from .models import reservations, MenuItem
 import datetime
 from .forms import contactForm
+from django.conf import settings
 
 def reservation_detail(request , reservation_id):
     try:
