@@ -58,7 +58,7 @@ class MenuItem(models.Model):
     description = models.TextField(blank=True)
     category = models.CharField(max_length=50)
     item_class = models.CharField(max_length=50)
-    image =  models.ImageFIeld(upload_to='menu_images/', blank=ture, null=True)
+    image =  models.ImageFIeld(upload_to='menu_images/', blank=ture, null=True) //image code
 
     def__str__(self):
         return self.name     
