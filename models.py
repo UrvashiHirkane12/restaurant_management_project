@@ -45,6 +45,7 @@ class order(models.Model):
 
 
 class contact(models.Model):
+    
     name = models.CharField(max_length=100)
     email = models.emailField()
     submitted_at = models.dateTimeField(auto_now_add=True)
