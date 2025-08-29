@@ -58,4 +58,13 @@ class MenuItem(models.Model):
     category = models.CharField(max_length=50)
 
     def__str__(self):
-        return self.name      
+        return self.name     
+
+
+class Restaurant(models.Model):
+    name = ,odels.CharField(max_length=100)
+    address = models.TextField()
+    phone_number = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name         
