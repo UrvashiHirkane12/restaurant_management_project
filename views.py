@@ -4,6 +4,7 @@ from .models import reservations, MenuItem
 import datetime
 from .forms import contactForm
 from django.conf import settings
+from .models import Restaurant
 
 def reservation_detail(request , reservation_id):
     try:
@@ -48,3 +49,7 @@ def home(request):
 def menu_view(request):
     items = MenuItem.objects.all()
     return render(request, "menu.html", {"items":items})    
+
+def home(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, "home.html", {"restaurant": restaurant})    
