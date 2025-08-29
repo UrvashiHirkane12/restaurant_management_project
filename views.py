@@ -5,6 +5,7 @@ import datetime
 from .forms import contactForm
 from django.conf import settings
 from .models import Restaurant
+from .forms import contactForm
 
 def reservation_detail(request , reservation_id):
     try:
@@ -53,3 +54,13 @@ def menu_view(request):
 def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, "home.html", {"restaurant": restaurant})    
+
+def contact_view(request):
+    if request.method == "POST":
+        form = ConatctForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact') 
+        else:
+            form = ContactForm()
+            return render(request, 'contact.html',{'form': form})       
