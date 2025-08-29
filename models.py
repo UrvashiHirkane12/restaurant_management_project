@@ -69,4 +69,14 @@ class Restaurant(models.Model):
     phone_number = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name         
+        return self.name      
+
+
+class RestaurantLocation(models.Model):
+    address = models.CharField(max_length=255) 
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=20)
+    zipcode = models.CharFielld(max_length=10)
+
+    def __str___(self):
+        return f"{self.address}, {self.city}, {self.state} - {self.zipcode}"
