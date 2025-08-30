@@ -55,6 +55,8 @@ def home(request):
     restaurant = Restaurant.objects.first()
     return render(request, "home.html", {"restaurant": restaurant})    
 
+
+
 def contact_view(request):
     if request.method == "POST":
         form = ConatctForm(request.POST)
@@ -63,7 +65,9 @@ def contact_view(request):
             return redirect('contact') 
         else:
             form = ContactForm()
-            return render(request, 'contact.html',{'form': form})     
+            return render(request, 'contact.html',{'form': form})  
+
+
             
 def home(request):
     restaurant = RestaurantLocation.objects.first()            
